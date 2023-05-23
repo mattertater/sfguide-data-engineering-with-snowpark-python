@@ -80,7 +80,7 @@ def main():
     # Filter by city name and year using a sidebar widget
     city_name = st.sidebar.selectbox('Select a city:', sorted(df['CITY_NAME'].unique()), index=sorted(df['CITY_NAME'].unique()).index('Boston'))
     month = st.sidebar.multiselect('Select month(s):', sorted(df['MONTH'].unique()), default=[1,2,3,4,5,6,7,8,9,10,11,12], key='month_filter')
-    year = st.sidebar.multiselect('Select year(s):', sorted(df['YEAR'].unique()), default=[2022], key='year_filter')
+    year = st.sidebar.multiselect('Select year(s):', sorted(df['YEAR'].unique()), default=[2021], key='year_filter')
 
     # Apply filters to df
     mask = ((df['CITY_NAME'] == city_name) & (df['MONTH'].isin(month)) & (df['YEAR'].isin(year)))
